@@ -1,3 +1,8 @@
+/*
+Soundcloud Rapper Name Generator
+Returns complete name
+ */
+
 import java.util.Random;
 
 public class NameGenerator {
@@ -12,12 +17,16 @@ public class NameGenerator {
 
     private static Random rand = new Random();
 
-    public static String generateName() {
+    public static String generateName(int totalNames) {
+        String names = "";
+        for (int i = 0; i < totalNames; i++){
+            names += Beginning[rand.nextInt(Beginning.length)] +
+                    Middle[rand.nextInt(Middle.length)]+
+                    End[rand.nextInt(End.length)];
+            names += "\n";
+        }
 
-        return Beginning[rand.nextInt(Beginning.length)] +
-                Middle[rand.nextInt(Middle.length)]+
-                End[rand.nextInt(End.length)];
-
+        return names;
     }
 
 }
